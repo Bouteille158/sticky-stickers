@@ -4,7 +4,8 @@ parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" || exit ; pwd -P )
 cd "$parent_path" || exit
 
 # Create a new folder for the assets
-mkdir -p assets
+mkdir -p assets/default
+touch assets/default/default-image.png
 
 # Launch the script to generate lists-list.txt file 
 # with the list of files in the assets folder and its subfolders
