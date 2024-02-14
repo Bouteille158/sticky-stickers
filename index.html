@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sticky stickers</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="manifest" href="/manifest.json" />
+		<script>
+			if ("serviceWorker" in navigator) {
+				window.addEventListener("load", function () {
+					navigator.serviceWorker.register("/service-worker.js").then(
+						function (registration) {
+							console.log(
+								"ServiceWorker registration successful with scope: ",
+								registration.scope
+							);
+						},
+						function (err) {
+							console.log(
+								"ServiceWorker registration failed: ",
+								err
+							);
+						}
+					);
+				});
+			}
+		</script>
+		<script>
+			window.onload = function () {
+				fetch("./lists-list.txt")
+					.then((response) => response.text())
+					.then((data) => {
+						var lists = data.split("\n");
+						lists.forEach((list) => {
+							fetch(list)
+								.then((response) => response.text())
+								.then((data) => {
+									var images = data.split("\n");
+									var container =
+										document.getElementById(
+											"imageContainer"
+										);
+									var imageFolder = list.substring(
+										0,
+										list.lastIndexOf("/")
+									);
+
+									for (var i = 0; i < images.length; i++) {
+										var li = document.createElement("li");
+										var img = document.createElement("img");
+										img.className = "sticker";
+
+										img.src =
+											imageFolder +
+											"/" +
+											images[i].trim(); // Supprime les espaces blancs éventuels
+										img.alt = "Image " + (i + 1);
+										li.appendChild(img);
+										container.appendChild(li);
+									}
+								});
+						});
+					});
+			};
+		</script>
+	</head>
+	<body>
+		<h1>Sticky stickers</h1>
+		<ul id="imageContainer">
+			<!-- Les images seront ajoutées ici par le script -->
+		</ul>
+	</body>
+</html>
