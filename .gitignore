@@ -1,4 +1,5 @@
-assets
+assets/*
 lists-list.txt
 .DS_Store
 cached-files-list.txt
+old.*
