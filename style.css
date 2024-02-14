@@ -1,0 +1,11 @@
+.sticker {
+	width: 200px;
+}
+#imageContainer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+#imageContainer li {
+	list-style: none;
+}
