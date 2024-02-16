@@ -31,6 +31,7 @@
 					.then((data) => {
 						var lists = data.split("\n");
 						lists.forEach((list) => {
+							list = list.trim();
 							if (list === "") {
 								return;
 							}
