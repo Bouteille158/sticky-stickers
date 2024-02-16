@@ -31,6 +31,9 @@
 					.then((data) => {
 						var lists = data.split("\n");
 						lists.forEach((list) => {
+							if (list === "") {
+								return;
+							}
 							fetch(list)
 								.then((response) => response.text())
 								.then((data) => {
