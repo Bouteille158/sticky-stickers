@@ -11,6 +11,7 @@ self.addEventListener("install", (event) => {
 					"/lists-list.txt",
 					"/manifest.json",
 					"/icon.png",
+					"/favicon.ico",
 					"/cached-files-list.txt",
 				];
 				console.table(urlsToCache);
