@@ -26,6 +26,6 @@ fi
 cd "$target_folder" || exit
 
 # List all files in the folder and its subfolders, save to the text file
-find . -type f -not -name "${output_file}" -not -name ".DS_Store" | sed 's|^\./|/assets/|' | sort > "$output_file"
+find . -type f -not -name "${output_file}" -not -name ".DS_Store" | sed 's|^\./|./assets/|' | sort > "$output_file"
 
 echo "File list generated and saved to: $output_file"
