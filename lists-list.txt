@@ -1,1 +1,1 @@
-./assets/default/_file_list.txt
+./assets/default/-file_list.txt
