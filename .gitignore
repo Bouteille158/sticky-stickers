@@ -1,4 +1,5 @@
 assets/*
+!assets/default
 lists-list.txt
 .DS_Store
 cached-files-list.txt
