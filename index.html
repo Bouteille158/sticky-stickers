@@ -67,8 +67,20 @@
 										li.appendChild(img);
 										container.appendChild(li);
 									}
+								})
+								.catch((error) => {
+									console.error(
+										"There has been a problem with your images fetch operation:",
+										error
+									);
 								});
 						});
+					})
+					.catch((error) => {
+						console.error(
+							"There has been a problem with your list fetching operation:",
+							error
+						);
 					});
 			};
 		</script>
