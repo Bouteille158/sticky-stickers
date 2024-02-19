@@ -5,14 +5,14 @@ self.addEventListener("install", (event) => {
 			.then((listsList) => {
 				const fileList = listsList.split("\n");
 				var urlsToCache = [
-					"/",
-					"/index.html",
-					"/style.css",
-					"/lists-list.txt",
-					"/manifest.json",
-					"/icon.png",
-					"/favicon.ico",
-					"/cached-files-list.txt",
+					"./",
+					"./index.html",
+					"./style.css",
+					"./lists-list.txt",
+					"./manifest.json",
+					"./icon.png",
+					"./favicon.ico",
+					"./cached-files-list.txt",
 				];
 				console.table(urlsToCache);
 				fileList.forEach((file) => {
