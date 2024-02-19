@@ -31,6 +31,7 @@
 				fetch("./lists-list.txt")
 					.then((response) => response.text())
 					.then((data) => {
+						console.log("Data from ./lists-list.txt : ", data);
 						var lists = data.split("\n");
 						lists.forEach((list) => {
 							list = list.trim();
