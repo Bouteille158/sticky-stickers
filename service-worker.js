@@ -5,7 +5,6 @@ self.addEventListener("install", (event) => {
 			.then((listsList) => {
 				const fileList = listsList.split("\n");
 				var urlsToCache = [
-					"./",
 					"./index.html",
 					"./style.css",
 					"./lists-list.txt",
@@ -16,7 +15,9 @@ self.addEventListener("install", (event) => {
 				];
 				console.table(urlsToCache);
 				fileList.forEach((file) => {
-					urlsToCache.push(file);
+					if (file !== "") {
+						urlsToCache.push(file);
+					}
 				});
 				console.table(urlsToCache);
 				return caches.open("v1").then((cache) => {
